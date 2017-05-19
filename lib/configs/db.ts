@@ -4,7 +4,8 @@ interface Iconfig {
   database: string,
   host?:string,
   dialect: string,
-  pool?:any
+  pool?:any,
+  seederStorage?:string,
 }
 interface Iconfigs{
   development: Iconfig,
@@ -22,7 +23,8 @@ export const dbConfig:Iconfigs = {
       max: 5,
       min: 0,
       idle: 10000
-    }
+    },
+    seederStorage: "sequelize"
   },
   test: {
     username: process.env.DATABASE_USERNAME_TEST || 'yycrm_tester',
@@ -34,7 +36,8 @@ export const dbConfig:Iconfigs = {
       max: 5,
       min: 0,
       idle: 10000
-    }
+    },
+    seederStorage: "sequelize"
   },
   production: {
     username: process.env.DATABASE_USERNAME_PRO,
@@ -46,7 +49,8 @@ export const dbConfig:Iconfigs = {
       max: 10,
       min: 5,
       idle: 30000
-    }
+    },
+    seederStorage: "sequelize"
   }
 };
 exports.dbConfig= module.exports =  dbConfig;

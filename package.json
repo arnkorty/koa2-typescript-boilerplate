@@ -12,9 +12,10 @@
     "start": "node build/index.js",
     "dev-server": "nodemon -w lib -x ts-node lib/index.ts",
     "lint": "tslint lib/**/*.ts",
+    "db": "tsc && ./node_modules/sequelize-cli/bin/sequelize db:migrate && ./node_modules/sequelize-cli/bin/sequelize db:seed:all",
     "migrate": "tsc && ./node_modules/sequelize-cli/bin/sequelize db:migrate",
     "migrate:undo": "tsc && ./node_modules/sequelize-cli/bin/sequelize db:migrate:undo",
-    "seed": "tsc && ./node_modules/sequelize-cli/bin/sequelize db:seed",
+    "seed": "tsc && ./node_modules/sequelize-cli/bin/sequelize db:seed:all",
     "seed:undo": "tsc && ./node_modules/sequelize-cli/bin/sequelize db:seed:undo"
   },
   "keywords": [
