@@ -74,6 +74,7 @@ export default function m(sequelize:any, DataTypes:any) {
     },
     classMethods: {
       associate: function(models:any) {
+        User.hasOne(models.UserRole, {foreignKey: 'user_id'})
       }
     }
   });

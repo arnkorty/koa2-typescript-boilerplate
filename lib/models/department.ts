@@ -1,5 +1,4 @@
-'use strict';
-module.exports = function(sequelize, DataTypes) {
+export default function m(sequelize:any, DataTypes:any) {
   var Department = sequelize.define('Department', {
     name: DataTypes.STRING,
     parent_id: DataTypes.INTEGER,
@@ -8,7 +7,7 @@ module.exports = function(sequelize, DataTypes) {
     order: DataTypes.INTEGER
   }, {
     classMethods: {
-      associate: function(models) {
+      associate(models:any) {
         // associations can be defined here
       }
     }

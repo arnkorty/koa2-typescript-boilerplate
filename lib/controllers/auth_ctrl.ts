@@ -1,5 +1,9 @@
 import { BaseCtrl } from './base_ctrl'
 export class AuthCtrl extends BaseCtrl{
+  protected _init(){
+    this.need_login = false;
+    this.need_check = false;
+  }
   public async login(){
     let user = await this.db.User.findOne({where: {email: this.ctx.params.email}})
     if(user && user.authenticate(this.ctx.params.password)){

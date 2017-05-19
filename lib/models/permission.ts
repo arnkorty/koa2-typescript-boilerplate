@@ -1,5 +1,4 @@
-'use strict';
-module.exports = function(sequelize, DataTypes) {
+export default function m(sequelize:any, DataTypes:any) {
   var Permission = sequelize.define('Permission', {
     name: DataTypes.STRING,
     key: DataTypes.STRING,
@@ -9,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
     url: DataTypes.STRING
   }, {
     classMethods: {
-      associate: function(models) {
+      associate: function(models:any) {
         // associations can be defined here
       }
     }
