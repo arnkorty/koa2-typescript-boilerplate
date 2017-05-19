@@ -5,11 +5,15 @@
     "noImplicitAny": true,
     "sourceMap": true,
     "outDir": "./build",
-    "rootDir": "./lib"
+    "rootDir": "./lib",
+    "allowSyntheticDefaultImports": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
   },
   "compileOnSave": false,
   "filesGlob": [
-    "./lib/**/*.ts"
+    "./lib/**/*.ts",
+    "./lib/**/*.js"
   ],
   "exclude": [
     "node_modules"
@@ -17,10 +21,7 @@
   "atom": {
     "rewriteTsconfig": true
   },
-  "files": [
-    "./lib/index.ts",
-    "./lib/routes.ts",
-    "./lib/test/index.spec.ts",
-    "./lib/test/routes.spec.ts"
+  "include": [
+    "./lib/**/*"
   ]
 }
